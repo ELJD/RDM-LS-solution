@@ -1,9 +1,9 @@
-#Day 3####
+##Analysis hormone.csv###
 #Setting working directory ####
-folder <- "D:/trainingen/zelfgegeven/Rintro/exercises"
+folder <- "C:/users/Documents/hormone-project/scripts"
 setwd(folder)
 
-Hormone <- read.csv2("Rdata/Hormone.csv")
+Hormone <- read.csv2("data/Hormone.csv")
 Hormone
 names(Hormone)[3] <- "conc"
 
@@ -13,4 +13,4 @@ p2 <- ggplot(Hormone, aes(Drug,conc)) +
 					                                           width=0.25) + geom_point() +
   coord_flip()
 
-ggarrange(p1,p2,ncol=1)
+p2
