@@ -1,0 +1,62 @@
+---
+title: "Report-hormone-analysis"
+author: "tmuylder"
+date: "11/4/2020"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+# Analysis of file hormone.csv #
+
+This script analyzes the dataset of the hormone experiment performed on 01/01/2020. 
+It contains the statistical analysis and plotting of figure 2D of the paper. 
+
+
+These are the packages that we will need for the analysis
+```{r}
+sessionInfo()
+```
+
+# Part 1
+First we will have to install 
+```{r}
+# Import dataset with proper name handling & rename third column. 
+hormone <- read.csv2("data/20201102-hormone.csv")
+names(hormone)[3] <- "Concentration"
+hormone
+```
+
+```{r}
+# Create plot effect of drug A and B on concentration of substance X measured in blood of patients. 
+ggplot(hormone, aes(Drug,Concentration)) +
+  stat_summary(fun=mean, geom="bar") +
+  stat_summary(fun.data=mean_cl_normal, geom="errorbar", width=0.25) + geom_point() +
+  coord_flip()
+```
+
+There is a clear influence of the choice of drugs on the concentration of hormones present in patients blood. 
