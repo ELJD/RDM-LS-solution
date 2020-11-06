@@ -5,8 +5,9 @@ pairs(~mpg+disp+drat+wt,data=mtcars,
             main="Simple Scatterplot Matrix")
 
 # Install requirements & plotting of 3D scatterplot
-install.packages("scatterplot3d")
+#install.packages("scatterplot3d")
 library(scatterplot3d)
-attach(mtcars)
+
+#attach(mtcars)
 scatterplot3d(wt,hp,mpg, pch=16, highlight.3d=TRUE,
 	                    type="h", main="3D Scatterplot")
