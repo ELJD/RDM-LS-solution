@@ -4,6 +4,8 @@ author: "tmuylder"
 date: "11/4/2020"
 output:
   html_document: default
+bibliography: literature/bibliography.bib
+csl: literature/apa.csl
 ---
 
 
@@ -11,7 +13,8 @@ output:
 
 This script analyzes the dataset of the hormone experiment performed on 01/01/2020. 
 It contains the statistical analysis and plotting of figure 2D of the paper. 
-Here is another sentence
+
+Here is a reference to a paper [@Munafo2017].
 
 ## 1. Import libraries
 
@@ -60,3 +63,7 @@ This report was created with built with `r getRversion()`. The following package
 ```{r}
 sessionInfo()
 ```
+
+### 6. References
+
+
