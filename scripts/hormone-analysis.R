@@ -17,7 +17,7 @@ names(hormone)[3] <- "Concentration"
 hormone
 
 # Open a pdf file where the plot will be saved
-png(file = "results/plots/20201104-effect-drug-concentration.png", width=600, height=350) 
+png(file = "results/plots/20201102-effect-drug-concentration.png", width=600, height=350) 
 
 # Create plot effect of drug A and B on concentration of substance X measured in blood of patients. 
 ggplot(hormone, aes(Drug,Concentration)) +

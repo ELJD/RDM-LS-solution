@@ -4,8 +4,8 @@ author: "tmuylder"
 date: "11/4/2020"
 output:
   html_document: default
-bibliography: literature/bibliography.bib
 csl: literature/apa.csl
+bibliography: literature/bibliography.bib
 ---
 
 
@@ -64,6 +64,5 @@ This report was created with built with `r getRversion()`. The following package
 sessionInfo()
 ```
 
-### 6. References
-
+## 6. References
 
